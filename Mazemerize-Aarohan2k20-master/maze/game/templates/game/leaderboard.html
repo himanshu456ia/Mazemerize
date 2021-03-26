@@ -482,7 +482,7 @@
   <!-----Navigatio  nBar---->
   <section id="nav-bar">
     <nav class="navbar navbar-expand-lg navbar-light">
-      <a class="navbar-brand" href="https://arhn.co.in/" target="_blank"><img style="width:200px;height:70px; " src="{% static 'img/bluelogo2.png' %}" id="logo"></a>
+      <a class="navbar-brand" href="https://arhn.co.in/" target="_blank"><img style="width:150px;height:100px; " src="{% static 'img/logo.png' %}" id="logo"></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -545,18 +545,18 @@
   
     </div>
   </div>
-  <table class="table">
-    <thead style="color: white;font-weight: bold;">
-      <tr>
+  <table class="table" style="margin-top: 2% ">
+    <thead style="color: white;font-weight: bold;margin: 20%">
+      <tr style="margin: 20%">
         <th scope="col">Name</th>
         <th scope="col">Wins</th>
         <th scope="col">Losses</th>
-        <th scope="col">Number Of Games</th>
+        <th scope="col">Games</th>
       </tr>
     </thead>
-    <tbody style="color: white;">
+    <tbody style="color: white;margin: 20%;">
       {% for i in p%}
-      <tr style="color: white;">
+      <tr style="color: white;margin: 20%">
         <th scope="row">{{i.user.first_name}} {{i.user.last_name}}</th>
         <td>{{i.win}}</td>
         <td>{{i.lose}}</td>
