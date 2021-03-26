@@ -22,7 +22,7 @@
         }
 
         body {
-            background:url('{% static "img/pic-3.jpg" %}');
+            background:url( {% static "img/pic-3.jpg" %});;
             overflow-x: hidden;
             touch-action:manipulation;
         }
@@ -321,20 +321,20 @@ visibility: hidden;
 
 .blue {
   background-color: transparent;
-  border: 8px solid blue;
+  border: 8px solid dodgerblue;
   -webkit-transform: translate(-75%, 100%);
 }
 
 .green {
   background-color: transparent;
-  border: 8px solid green;
+  border: 8px solid dodgerblue;
   -webkit-transform: translate(0, 25%);
   -webkit-transform: translate(0, 175%);
 }
 
 .red {
   background-color: transparent;
-  border: 8px solid black;
+  border: 8px solid dodgerblue;
   -webkit-transform: translate(0, 25%);
 }
 
@@ -467,7 +467,7 @@ left:20%;
                 var Win = 0;
                 var Loss = 0;
                 // Get the modal
-                //var modal = document.getElementById('myModal');
+                var modal = document.getElementById('myModal');
 
                 // Get the <span> element that closes the modal
                 var span = document.getElementsByClassName("close")[0];
@@ -483,9 +483,9 @@ left:20%;
 
                 modelfunwin = function () {
                     console.log("func called")
-                    //modal.style.display = "block";
-                    //x = document.querySelector(".gamehead");
-                    //x.textContent = ""
+                    modal.style.display = "block";
+                    x = document.querySelector(".gamehead");
+                    x.textContent = ""
                     Win = 1;
                     window.location.replace("playnow2/" + String(Win));
 
@@ -825,7 +825,7 @@ left:20%;
                     this.moveclear = function (a, b) {
                         var scale = this.S;
                         this.ctx = this.canvas.getContext('2d');
-                        this.ctx.fillStyle = "#005A9B";
+                        this.ctx.fillStyle = "#FF0000";
                         this.ctx.fillRect(scale * a, scale * b, scale, scale);
                         this.Board[a][b] = ' '
                     }
