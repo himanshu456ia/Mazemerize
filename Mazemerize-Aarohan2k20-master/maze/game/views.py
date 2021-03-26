@@ -60,7 +60,7 @@ def play2(request,key):
 		p.lose += 1
 	p.game += 1
 	p.save()
-	return render(request,'game/play2.html',{'p':p})
+	return redirect('play')
 
 
 def game(request):

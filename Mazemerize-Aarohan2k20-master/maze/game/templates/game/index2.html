@@ -22,7 +22,7 @@
         }
 
         body {
-            background:url( {% static "img/pic-3.jpg" %});;
+            background:url('{% static "img/pic-3.jpg" %}');
             overflow-x: hidden;
             touch-action:manipulation;
         }
@@ -467,7 +467,7 @@ left:20%;
                 var Win = 0;
                 var Loss = 0;
                 // Get the modal
-                var modal = document.getElementById('myModal');
+                //var modal = document.getElementById('myModal');
 
                 // Get the <span> element that closes the modal
                 var span = document.getElementsByClassName("close")[0];
@@ -483,9 +483,9 @@ left:20%;
 
                 modelfunwin = function () {
                     console.log("func called")
-                    modal.style.display = "block";
-                    x = document.querySelector(".gamehead");
-                    x.textContent = ""
+                    //modal.style.display = "block";
+                    //x = document.querySelector(".gamehead");
+                    //x.textContent = ""
                     Win = 1;
                     window.location.replace("playnow2/" + String(Win));
 
