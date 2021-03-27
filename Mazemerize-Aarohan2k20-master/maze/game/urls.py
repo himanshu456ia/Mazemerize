@@ -1,4 +1,3 @@
-
 from django.urls import path,include
 from . import views
 
@@ -14,5 +13,7 @@ urlpatterns = [
     path('game/playnow2/<key>',views.play2,name = 'play2'),
 
     path('auth/', include('social_django.urls', namespace='social')),
+
+    path('api/',include('game.api.urls'))
 
 ]

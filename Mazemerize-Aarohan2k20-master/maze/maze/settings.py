@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'game.apps.GameConfig',
     'social_django',
+    'rest_framework',
 ]
 AUTHENTICATION_BACKENDS = [
     'social_core.backends.google.GoogleOAuth2',
