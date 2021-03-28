@@ -26,7 +26,7 @@
       height: 100%;
       margin: 0px;
       overflow: hidden;
-
+  background:url("{% static 'img/pic-3.jpg' %}");
       --blue: #3aa8c3;
       --lightBlue: #0ff;
       --spinAnimation: spin 23s cubic-bezier(.39, -0.52, .53, .98) 0s infinite;
@@ -40,27 +40,6 @@
     animation-play-state:running; ;
     animation-timing-function: ease-in-out;
     }
-@keyframes animate{
-     0%{
-      background:url("{% static 'img/pic-1.jpg' %}");
-    }
-    20%{
-     background:url("{% static 'img/pic-2.jpg' %}");
-    }
-    40%{
-      background:url("{% static 'img/pic-3.jpg' %}");
-    }
-    60%{
-     background:url("{% static 'img/pic-4.jpg' %}");
-    }
-    80%{
-    background:url("{% static 'img/pic-5.jpg' %}");
-
-    }
-    100%{
-      background:url("{% static 'img/pic-6.jpg' %}");
-    }
-  }
 
     #container {
       width: 90vw;
