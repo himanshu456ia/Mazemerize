@@ -13,17 +13,27 @@
   <!-- <script src="https://apis.google.com/js/platform.js" async defer></script> -->
   <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Permanent+Marker&display=swap"
     rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tilt+Prism&display=swap" rel="stylesheet">
 
 
   <title>Play Now</title>
   <style>
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
     body {
       background: white;
       width: 100%;
       height: 100%;
       margin: 0px;
       overflow: hidden;
-      background:url("{% static 'img/pic-3.jpg' %}");
+      /* background:url("{% static 'img/MarsBG6.png' %}");
+      background-size: cover; */
+      /* background-repeat: no-repeat; */
       --blue: #3aa8c3;
       --lightBlue: #0ff;
       --spinAnimation: spin 23s cubic-bezier(.39, -0.52, .53, .98) 0s infinite;
@@ -39,6 +49,44 @@
       animation-timing-function: ease-in-out;
     }
 
+    #myVideo {
+  position: fixed;
+  right: 0;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  margin: auto;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -10;
+}
+#myVideo2{
+  display: none;
+}
+
+
+@media only screen and (max-width: 580px) {
+  #myVideo2{
+    display: inline;
+    position: fixed;
+  right: 0;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  margin: auto;
+  min-width: 80%;
+  min-height: 80%;
+  z-index: -10; 
+  }
+
+  #myVideo{
+    display: none;
+  }
+}
+
+
+
+ */
     #container {
       width: 90vw;
       height: 90vw;
@@ -77,39 +125,39 @@
 
 
     #mainGear .decoration {
-      fill: dodgerblue;
-      stroke: royalblue;
+      fill: rgb(224, 94, 0);
+      stroke: rgb(224, 94, 0);
       stroke-width: 1px;
 
       box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5), 0px 0px 20px rgba(10, 160, 250, 0.4), 0px 0px 25px rgba(10, 160, 250, 0.4),
 
-        0px 0px 30px rgba(10, 160, 250, 0.4),
-        0px 0px 35px rgba(10, 160, 250, 0.4),
-        0px 0px 40px rgba(10, 160, 250, 0.4),
-        0px 0px 45px rgba(10, 160, 250, 0.4),
-        0px 0px 5px rgba(34, 34, 34, 0.5);
+        0px 0px 30px rgb(224, 94, 0),
+        0px 0px 35px rgb(224, 94, 0),
+        0px 0px 40px rgb(224, 94, 0),
+        0px 0px 45px rgb(224, 94, 0),
+        0px 0px 5px rgb(224, 94, 0);
     }
 
     #mainGear .runes path,
     #mainGear .runes circle {
       fill: none;
-      stroke: dodgerblue;
+      stroke:rgb(224, 94, 0);
       stroke-width: 2px;
       box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5), 0px 0px 20px rgba(10, 160, 250, 0.4), 0px 0px 25px rgba(10, 160, 250, 0.4),
 
-        0px 0px 30px rgba(10, 160, 250, 0.4),
-        0px 0px 35px rgba(10, 160, 250, 0.4),
-        0px 0px 40px rgba(10, 160, 250, 0.4),
-        0px 0px 45px rgba(10, 160, 250, 0.4),
-        0px 0px 5px rgba(34, 34, 34, 0.5);
+      0px 0px 30px rgb(224, 94, 0),
+        0px 0px 35px rgb(224, 94, 0),
+        0px 0px 40px rgb(224, 94, 0),
+        0px 0px 45px rgb(224, 94, 0),
+        0px 0px 5px rgb(224, 94, 0);
     }
 
     #mainGear .runes path.filled,
     #mainGear .runes circle {
-      fill: dodgerblue;
+      fill: rgb(224, 94, 0);
       box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5), 0px 0px 20px rgba(10, 160, 250, 0.4), 0px 0px 25px rgba(10, 160, 250, 0.4),
 
-        0px 0px 30px rgba(10, 160, 250, 0.4),
+        0px 0px 30px rgb(224, 94, 0),
         0px 0px 35px rgba(10, 160, 250, 0.4),
         0px 0px 40px rgba(10, 160, 250, 0.4),
         0px 0px 45px rgba(10, 160, 250, 0.4),
@@ -417,7 +465,7 @@
 
       #username {
         margin-top: 2vw;
-        font-size: 6vw;
+        font-size: 16vw;
         margin-bottom: 1vw;
       }
 
@@ -639,6 +687,17 @@
 </head>
 
 <body>
+
+  <video autoplay muted loop id="myVideo">
+    <source src="../../static/img/MarsBG10.mp4" type="video/mp4">
+  </video>
+
+
+  <video autoplay muted loop id="myVideo2">
+    <source src="../../static/img/MarsBG11.mp4" type="video/mp4">
+  </video>
+
+
   <!-----Navigatio  nBar---->
   <section id="nav-bar">
     <nav class="navbar navbar-expand-lg navbar-light">
@@ -715,7 +774,7 @@
 
     </div>
   </div>
-  <div id="container" style="z-index: -1;">
+  <!-- <div id="container" style="z-index: -1;">
     <div id="portal">
       <svg id="mainGear" viewBox="-10 -10 532 532" version="1.1" xmlns="http://www.w3.org/2000/svg"
         style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;">
@@ -917,6 +976,8 @@
         </g>
       </svg>
 
+
+      
       <div id="innerGears">
         <svg class="innerGear" viewBox="0 0 512 512" version="1.1" xmlns="http://www.w3.org/2000/svg"
           xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/">
@@ -1015,7 +1076,7 @@
           </defs>
         </svg>
 
-        <svg class="innerGear" viewBox="0 0 512 512" version="1.1" xmlns="http://www.w3.org/2000/svg"
+     <svg class="innerGear" viewBox="0 0 512 512" version="1.1" xmlns="http://www.w3.org/2000/svg"
           xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/">
           <g transform="rotate(-19, 256, 256)">
             <path filter="url(#shaddow)" class="teeth"
@@ -1093,9 +1154,12 @@
             </g>
           </g>
           <rect x="0" y="0" width="100%" height="100%" fill="black" opacity="0.05" />
-        </svg>
+        </svg> 
 
-        <svg class="innerGear" viewBox="0 0 512 512" version="1.1" xmlns="http://www.w3.org/2000/svg"
+
+        
+
+  <svg class="innerGear" viewBox="0 0 512 512" version="1.1" xmlns="http://www.w3.org/2000/svg"
           xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/">
           <g transform="rotate(5, 256, 256)">
             <path filter="url(#shaddow)" class="teeth"
@@ -1170,15 +1234,12 @@
                 <path
                   d="M369.497,411.13l-18.374,10.598l-3.697,-6.411l11.961,-6.898l-6.229,-10.789l6.409,-3.7l9.93,17.2Z" />
               </g>
-
-
-
-
-
             </g>
           </g>
           <rect x="0" y="0" width="100%" height="100%" fill="black" opacity="0.1" />
-        </svg>
+        </svg>  
+
+        
 
         <svg class="innerGear" viewBox="0 0 512 512" version="1.1" xmlns="http://www.w3.org/2000/svg"
           xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/">
@@ -1255,15 +1316,14 @@
                 <path
                   d="M369.497,411.13l-18.374,10.598l-3.697,-6.411l11.961,-6.898l-6.229,-10.789l6.409,-3.7l9.93,17.2Z" />
               </g>
-
-
-
-
-
             </g>
           </g>
           <rect x="0" y="0" width="100%" height="100%" fill="black" opacity="0.05" />
         </svg>
+
+
+
+
 
         <svg class="innerGear" viewBox="0 0 512 512" version="1.1" xmlns="http://www.w3.org/2000/svg"
           xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/">
@@ -1345,6 +1405,9 @@
           <rect x="0" y="0" width="100%" height="100%" fill="black" opacity="0.05" />
         </svg>
 
+
+
+
         <svg class="innerGear" viewBox="0 0 512 512" version="1.1" xmlns="http://www.w3.org/2000/svg"
           xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/">
           <g transform="rotate(18, 256, 256)">
@@ -1424,6 +1487,10 @@
           </g>
           <rect x="0" y="0" width="100%" height="100%" fill="black" opacity="0.05" />
         </svg>
+
+
+
+        
 
         <svg class="innerGear" viewBox="0 0 512 512" version="1.1" xmlns="http://www.w3.org/2000/svg"
           xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/">
@@ -2151,24 +2218,16 @@
         </svg>
       </div>
     </div>
-  </div>
-  <h1 id="title" style="color: white;font-family:'Nova Cut', cursive;
+  </div> -->
+  <h1 id="title" style="color: rgb(0, 0, 0);font-family: 'Tilt Prism', cursive;
         text-align: center;
 
-        text-shadow: 1px 1px 2px rgba(0,0,0, 0.5), 0px 0px 20px rgba(10,160,250,0.4),0px 0px 25px rgba(10,160,250,0.4),
+        text-shadow: 1px 1px 2px rgb(111, 0, 0), 0px 0px 20px rgba(244, 126, 42, 0.4),0px 0px 25px rgba(250, 110, 10, 0.4), 0px 0px 30px rgba(253, 99, 4, 0.62), 0px 0px 5px rgba(34,34,34, 0.5),
 
-  0px 0px 30px rgba(10,160,250,0.4),
-  0px 0px 35px rgba(10,160,250,0.4),
-  0px 0px 40px rgba(10,160,250,0.4),
-  0px 0px 45px rgba(10,160,250,0.4),
+ 
+  
           0px 0px 5px rgba(34,34,34, 0.5);">Mazemerize</h1>
-  <h2 id='username' style="color: white;text-align: center;font-family: 'Nova Cut', cursive;text-shadow: 1px 1px 2px rgba(0,0,0, 0.5), 0px 0px 20px rgba(10,160,250,0.4),0px 0px 25px rgba(10,160,250,0.4),
-
-  0px 0px 30px rgba(10,160,250,0.4),
-  0px 0px 35px rgba(10,160,250,0.4),
-  0px 0px 40px rgba(10,160,250,0.4),
-  0px 0px 45px rgba(10,160,250,0.4),
-          0px 0px 5px rgba(34,34,34, 0.5);">WELCOME</h2>
+  <h2 id='username' style="color: rgb(0, 0, 0);text-align: center;font-family: 'Tilt Prism', cursive, cursive;text-shadow: 1px 1px 2px rgb(111, 0, 0), 0px 0px 20px rgba(244, 126, 42, 0.4),0px 0px 25px rgba(250, 110, 10, 0.4), 0px 0px 30px rgba(253, 99, 4, 0.62), 0px 0px 5px rgba(34,34,34, 0.5);">WELCOME</h2>
 
 
   <div class="footer">
