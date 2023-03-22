@@ -11,6 +11,9 @@
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
   <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script> -->
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tilt+Prism&display=swap" rel="stylesheet">
   <title>Play Now</title>
   <style>
     body {
@@ -439,7 +442,7 @@
     }
 
     .navbar {
-      background: rgba(0, 0, 0, 0.1);
+      background: rgba(0, 0, 0, 0);
     }
 
     .navbar-toggler {
@@ -580,8 +583,9 @@
 
   <section id="nav-bar">
     <nav class="navbar navbar-expand-lg navbar-light">
-      <a class="navbar-brand" href="https://arhn.co.in/" target="_blank"><img style="width:150px;height:100px; "
-          src="{% static 'img/logo.png' %}" id="logo"></a>
+      <a class="navbar-brand" href="https://arhn.co.in/" target="_blank"><img style="width:auto;height:82px; "
+          src="{% static 'img/aarohan_logo.png' %}" id="logo"></a>
+
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -613,6 +617,10 @@
         </ul>
       </div>
     </nav>
+
+
+
+
   </section>
   <div id="myModal" class="modal fade" role="dialog">
     <div class="modal-dialog modal-dialog-centered">
@@ -656,21 +664,18 @@
   </div>
 
 
-  <h1 id="title" style="color: white;text-align: center;font-family: 'Nova Cut', cursive;text-shadow: 1px 1px 2px rgba(0,0,0, 0.5), 0px 0px 20px rgba(10,160,250,0.4),0px 0px 25px rgba(10,160,250,0.4),
-
-  0px 0px 30px rgba(10,160,250,0.4),
-  0px 0px 35px rgba(10,160,250,0.4),
-  0px 0px 40px rgba(10,160,250,0.4),
-  0px 0px 45px rgba(10,160,250,0.4),
-          0px 0px 5px rgba(34,34,34, 0.5);">Mazemerize</h1>
+  <h1 id="title" style="color: rgb(10, 10, 10);text-shadow: 2px 2px rgb(169, 46, 46);font-weight: initial;
+ text-align: center;font-family: 'Tilt Prism', cursive;background: linear-gradient(to right,#1b2fa1, #1b2fa1, #ff6b08, #ff6b08);
+  background-clip: border-box;
+-webkit-text-fill-color: transparent;
+-webkit-background-clip: text;">Mazemerize</h1>
   <h2 id='username' style="color: white;text-align: center;font-family: 'Nova Cut', cursive;text-shadow: 1px 1px 2px rgba(0,0,0, 0.5), 0px 0px 20px rgba(10,160,250,0.4),0px 0px 25px rgba(10,160,250,0.4),
 
   0px 0px 30px rgba(10,160,250,0.4),
   0px 0px 35px rgba(10,160,250,0.4),
   0px 0px 40px rgba(10,160,250,0.4),
   0px 0px 45px rgba(10,160,250,0.4),
-          0px 0px 5px rgba(34,34,34, 0.5);">Hello {{p.user.first_name}}
-  </h2>
+          0px 0px 5px rgba(34,34,34, 0.5);">Hello {{p.user.first_name}}  </h2>
   <h3 id='moves' style="color: white;text-align: center;font-family: 'Nova Cut', serif;
 text-shadow: 1px 1px 2px rgba(0,0,0, 0.5), 0px 0px 20px rgba(10,160,250,0.4),0px 0px 25px rgba(10,160,250,0.4),
 

@@ -14,6 +14,9 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script> -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tilt+Prism&display=swap" rel="stylesheet">
     <style>
         * {
             padding: 0;
@@ -21,10 +24,12 @@
         }
 
         body {
-            background:url(' {% static "img/MarsBg12.jpg" %}');
+            background: url("https://img.freepik.com/free-vector/space-planet-background-scene_1308-32546.jpg?size=626&ext=jpg&uid=R95059806&ga=GA1.1.1816407900.1677671524&semt=ais");
             background-position: center;
             overflow-x: hidden;
             touch-action: manipulation;
+            background-size: cover;
+            background-repeat: no-repeat;
         }
 
         @media (max-width:767px) {
@@ -47,6 +52,7 @@
             background: black;
             display: block;
             margin: 0 auto;
+            color: red;
         }
 
         #c {
@@ -253,6 +259,7 @@
 
         .navbar-nav li a {
             text-decoration: none;
+            /* color: coral; */
         }
 
 
@@ -261,7 +268,7 @@
         }
 
         .navbar {
-            background: rgba(0, 0, 0, 0.4);
+            background: rgba(0, 0, 0, 0.2);
         }
 
         .navbar-toggler {
@@ -269,7 +276,7 @@
         }
 
         .nav-link {
-            color: #DAE0E2 !important;
+            color: #e2dcda !important;
             font-weight: 600;
             font-size: 16px;
         }
@@ -277,6 +284,7 @@
         #navbarNav {
             margin-bottom: 00px;
             padding-bottom: -10px;
+            /* color: rgb(249, 144, 106); */
         }
 
         @media(max-width: 767px) {
@@ -302,7 +310,7 @@
                 margin: 0 auto;
                 font-family: 'Pacifico', cursive;
                 font-size: 3em;
-                color: white;
+                color: rgb(255, 255, 255);
             }
 
             #title {
@@ -330,7 +338,7 @@
 
             .blue {
                 background-color: transparent;
-                border: 8px solid dodgerblue;
+                border: 8px solid rgb(199, 211, 222);
                 -webkit-transform: translate(-75%, 100%);
             }
 
@@ -393,7 +401,7 @@
         <section id="nav-bar">
             <nav class="navbar navbar-expand-lg navbar-light">
                 <a class="navbar-brand" href="https://arhn.co.in/" target="_blank"><img
-                        style="width:200px;height:70px; " src="{% static 'img/bluelogo2.png' %}" id="logo"></a>
+                        style="width:auto;height:82px; " src="{% static 'img/aarohan_logo.png' %}" id="logo"></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -424,7 +432,7 @@
     <span id="wrapper" style="margin-left:auto; margin-right:auto;">
 
         <div id="maze">
-            <h1 id="title1" style="color: white;text-align: center;font-family: 'Nova Cut', cursive; text-shadow: 1px 1px 2px rgba(0,0,0, 0.5), 0px 0px 20px rgba(10,160,250,0.4),0px 0px 25px rgba(10,160,250,0.4),
+            <h1 id="title1" style="color: white;text-align: center;font-family: 'Tilt Prism', cursive; text-shadow: 1px 1px 2px rgba(0,0,0, 0.5), 0px 0px 20px rgba(10,160,250,0.4),0px 0px 25px rgba(10,160,250,0.4),
 
   0px 0px 30px rgba(10,160,250,0.4),
   0px 0px 35px rgba(10,160,250,0.4),
@@ -435,7 +443,7 @@
             <div id="timerel" style="display:inline-block;text-align: center;"></div>
             <div id="c" style="margin-left:auto; margin-right:auto;text-align: center;color: white;"></div>
 
-            <canvas id="canvas" width="523" height="523" style="margin-left:auto; margin-right:auto">
+            <canvas id="canvas" width="523" height="523" style="margin-left:auto; margin-right:auto;color: coral;">
                 This text is displayed if your browser does not support HTML5 Canvas.
             </canvas>
 
@@ -557,12 +565,14 @@
             }
 
             window.onload = function () {
-                twominutes = 25;     ///TIME SETTINGS HERE
+                twominutes = 15;     ///TIME SETTINGS HERE
                 x = document.querySelector("#timerel");
                 startTimer(twominutes, x)
             }
             playing = true
             window.addEventListener('keydown', doKeyDown, true);
+
+
 
             function doKeyDown(evt) {
                 var handled = false;
@@ -811,7 +821,7 @@
                         for (var i = 0; i < 2 * this.N + 1; i++) {
                             for (var j = 0; j < 2 * this.M + 1; j++) {
                                 if (this.Board[i][j] != ' ') {//} && this.Board[i][j] != '&') {
-                                    this.ctx.fillStyle = "#005A9C";
+                                    this.ctx.fillStyle = " rgb(249, 144, 106)";
                                     this.ctx.fillRect(scale * i, scale * j, scale, scale);
                                 }
                                 else if (i < 5 && j < 5)
@@ -840,7 +850,7 @@
                 this.moveclear = function (a, b) {
                     var scale = this.S;
                     this.ctx = this.canvas.getContext('2d');
-                    this.ctx.fillStyle = "#FF0000";
+                    this.ctx.fillStyle = "brown";
                     this.ctx.fillRect(scale * a, scale * b, scale, scale);
                     this.Board[a][b] = ' '
                 }
@@ -962,9 +972,9 @@
 
         //addEvents();
         </script>
-        <script>
 
-        </script>
+
+
 
 
         </div>
